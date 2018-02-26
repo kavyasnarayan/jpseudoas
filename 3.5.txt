@@ -1,0 +1,129 @@
+3.5 Write a module in pseudo code with 2 parameters: first parameter is a word, the 
+second is a character. The function must return the number of times the character is
+found in the word.
+/*********************************************************************
+ * File                 :countCharacters.txt
+ * Author Name          : Kavya S N 
+ * Desc                 : Program to number of times the character is found in the word. 
+ * Version              : 3.5
+ * Last Modified Date   : 22-Feb-2018
+ * Change Description   : Description about the changes implemented
+ *********************************************************************/
+BEGIN
+	DECLARE str[max_size] AS CHAR // Define the Maximum Size if the str based on the requirements initially Assume here it as max_size=50
+	DECLARE alphabets,digits,index AS INTEGER AND STORE 0 
+	PROMPT "Enter string of your choice" // Taking input string from user 
+	AND STORE in str[max_size]
+	check(string)
+END
+
+/*********************************************************************
+* Module Name         : check()
+* Input Parameters    : string characters 
+* Return Type         : INTEGER
+* Author              : Kavya S N 
+* Creation Date       : 23-Feb-2018
+* Description         : Check each character of string for alphabet, digit or special character 
+*********************************************************************/
+SUB check(string)
+	WHILE str[index] IS NOT EQUAL TO 0 THEN 
+		check(alphabet)
+		check(digits)
+		else
+        {
+            others++;
+        }
+
+        i++;
+    }
+	END WHILE
+END SUB
+/*********************************************************************
+* Module Name         : check()
+* Input Parameters    : string characters 
+* Return Type         : INTEGER
+* Author              : Kavya S N 
+* Creation Date       : 23-Feb-2018
+* Description         : Check each character of string for alphabet
+*********************************************************************/
+SUB check(alphabet)  		
+        if((str[i]>='a' && str[i]<='z') || (str[i]>='A' && str[i]<='Z'))
+        {
+            alphabets++;
+        }
+END SUB
+/*********************************************************************
+* Module Name         : check()
+* Input Parameters    : string characters 
+* Return Type         : INTEGER
+* Author              : Kavya S N 
+* Creation Date       : 23-Feb-2018
+* Description         : Check each character of string for alphabet
+*********************************************************************/
+ SUB check(digits)       
+else if(str[i]>='0' && str[i]<='9')
+        {
+            digits++;
+        }
+END SUB
+
+/*********************************************************************
+* Module Name         : check()
+* Input Parameters    : string characters 
+* Return Type         : INTEGER
+* Author              : Kavya S N 
+* Creation Date       : 23-Feb-2018
+* Description         : Check each character of string for alphabet
+*********************************************************************/
+        else
+        {
+            others++;
+        }
+
+        i++;
+    }
+END SUB 
+
+#include <stdio.h>
+#define MAX_SIZE 100 // Maximum string size
+
+
+int main()
+{
+    char str[MAX_SIZE];
+    int alphabets, digits, others, i;
+
+    alphabets = digits = others = i = 0;
+
+
+    /* Input string from user */
+    printf("Enter any string : ");
+    gets(str);
+
+    /*
+     * Check each character of string for alphabet, digit or special character
+     */
+    while(str[i]!='\0')
+    {
+        if((str[i]>='a' && str[i]<='z') || (str[i]>='A' && str[i]<='Z'))
+        {
+            alphabets++;
+        }
+        else if(str[i]>='0' && str[i]<='9')
+        {
+            digits++;
+        }
+        else
+        {
+            others++;
+        }
+
+        i++;
+    }
+
+    printf("Alphabets = %d\n", alphabets);
+    printf("Digits = %d\n", digits);
+    printf("Special characters = %d", others);
+
+    return 0;
+}
